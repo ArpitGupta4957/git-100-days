@@ -17,7 +17,7 @@ class git_1 {
         return ans;
     }
     public static void main(String[] args) {
-        int [] nums = {1,3,4,1,2,3,1};
-        System.out.println(findMat(nums));
+        int [] num = {1,3,4,1,2,3,1};
+        System.out.println(findMat(num));
     }
 }
