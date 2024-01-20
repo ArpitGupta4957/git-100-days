@@ -36,8 +36,5 @@ class git_17{
         int target = 1;
         int ans = search(nums, target);
         System.out.println(ans);
-        
     }
-
-    
 }
