@@ -3,42 +3,45 @@ import java.util.Map;
 
 public class git_33 {
 
-    public static String findSubstring(String s, String t) {
-        if (s.length() == 0 || t.length() == 0) {
+    public String minWindow(String s, String t) {
+        if (s == null || t == null || s.length() == 0 || t.length() == 0 ||
+                s.length() < t.length()) {
             return "";
         }
-        int count=0;
-        int minLen = Integer.MAX_VALUE;
-        int startIndex = 0;
         Map<Character, Integer> hm = new HashMap<>();
-        for (int i = 0; i < t.length(); i++) {
-            hm.put(t.charAt(i), hm.getOrDefault(t.charAt(i), 0) + 1);
-        }
+        int count = t.length();
+        int start = 0, end = 0, minLen = Integer.MAX_VALUE, startIndex = 0;
     
-        int start = 0, end = 0;
-        while (end < s.length()) {
-            if (hm.get(s.charAt(end)) > 0) {
-                count++;
-            } 
-            while (count == t.length()) {
-                if (minLen > end - start + 1) {
-                    minLen = end - start + 1;
+        for (char c : t.toCharArray()) {
+            hm.put(c, hm.getOrDefault(c, 0)+1);
+        }
+
+        char[] chS = s.toCharArray();
+
+        while (end < chS.length) {
+            if (hm.get(end) > 0) {
+                count--;
+            }
+            while (count == 0) {
+                if (end - start < minLen) {
                     startIndex = start;
+                    minLen = end - start;
                 }
-                if (hm.get(s.charAt(start)) > 0) {
-                    count--;
+                if (hm.get(start) == 0) {
+                    count++;
                 }
                 start++;
             }
             end++;
         }
-    
-        return minLen == Integer.MAX_VALUE ? new String() : new String(s.toCharArray(), startIndex, minLen);
+
+        return minLen == Integer.MAX_VALUE ? new String() :
+                new String(chS, startIndex, minLen);
     }
 
     public static void main(String[] args) {
-        String s = "abcughbghca";
-        String t = "abc";
+        String s = "aa";
+        String t = "aa";
         System.out.println(findSubstring(s, t)); // Output: "aa"
     }
 }
