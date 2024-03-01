@@ -19,7 +19,7 @@ public class git_57 {
 
         return result;
     }
-
+    
     private void twoSum(int[] nums, int k, List<List<Integer>> result, int target) {
         int i = k, j = nums.length - 1;
         while (i < j) {
