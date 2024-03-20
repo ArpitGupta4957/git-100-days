@@ -17,4 +17,8 @@ class Solution {
         Solution obj = new Solution();
         System.out.println(obj.strStr(haystack, needle));
     }
+    public git_77.ListNode mergeInBetween(git_77.ListNode list1, int i, int j, git_77.ListNode list2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mergeInBetween'");
+    }
 }
