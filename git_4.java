@@ -21,4 +21,8 @@ class Solution {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'mergeInBetween'");
     }
+    public char[] isPalindrome(git_79.ListNode head) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isPalindrome'");
+    }
 }
