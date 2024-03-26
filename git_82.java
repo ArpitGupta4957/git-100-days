@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class git_82 {
     public List<Integer> findDuplicates(int[] nums) {
